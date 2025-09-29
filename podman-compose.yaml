@@ -3,7 +3,7 @@ version: '3.8'
 services:
   photography-portfolio-app:
     # Use the image you built locally with 'docker build -t photography-portfolio-dev .'
-    image: photography-portfolio-dev:latest
+    image: localhost/photography-portfolio-dev:latest
     
     # Map the container port 5173 to the host machine port 5173
     ports:
@@ -16,6 +16,5 @@ services:
     # Set the restart policy to ensure the container restarts if it crashes
     restart: unless-stopped
     
-    # You can optionally rely on the CMD in the Dockerfile, or uncomment this 
-    # to explicitly run the combined script.
-    # command: npm run docker:dev
+    # You must expose the server by telling it to bind to 0.0.0.0
+    command: npm run docker:dev -- --host
