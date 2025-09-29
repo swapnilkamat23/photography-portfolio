@@ -5,6 +5,10 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
+    allowedHosts: [
+      'photos.swapnilkamat.me',
+      'swapnilkamat.me' // Include the root domain just in case
+    ],
     host: '0.0.0.0', // Bind to host machine's IP
     port: 5173      // Optional: Explicitly define port
   }
