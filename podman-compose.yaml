@@ -2,8 +2,8 @@ version: '3.8'
 
 services:
   photography-portfolio-app:
-    # Use the image you built locally with 'docker build -t photo-gallery-dev .'
-    image: photo-gallery-dev:latest
+    # Use the image you built locally with 'docker build -t photography-portfolio-dev .'
+    image: photography-portfolio-dev:latest
     
     # Map the container port 5173 to the host machine port 5173
     ports:
