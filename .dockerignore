@@ -1,0 +1,8 @@
+node_modules
+    .cache
+dist
+build
+npm - debug.log
+    .DS_Store
+photoData.json
+processing_cache.json
