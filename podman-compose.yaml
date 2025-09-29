@@ -7,14 +7,25 @@ services:
     
     # Map the container port 5173 to the host machine port 5173
     ports:
-      - "5173:5173"
+      - "192.168.4.100:5173:5173"
       
     # Environment variables
     environment:
       - NODE_ENV=development
+
+    volumes:
+      - .:/app:Z
+
+    user: "1000"
 
     # Set the restart policy to ensure the container restarts if it crashes
     restart: unless-stopped
     
     # You must expose the server by telling it to bind to 0.0.0.0
     command: npm run docker:dev -- --host
+    networks:
+      - my-tunnel-network
+
+networks:
+  my-tunnel-network:
+    external: true
