@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: photography-portfolio-pod
+  labels:
+    app: photography-portfolio
+spec:
+  # Define the single container that runs both the dev server and the watcher
+  containers:
+    - name: dev-server-watcher
+      # Use the image name you built locally
+      image: photography-portfolio-dev:latest
+      
+      # Set the container's environment (optional, but good practice)
+      env:
+        - name: NODE_ENV
+          value: development
+          
+      # Map the container port 5173 to the host machine port 5173
+      ports:
+        - containerPort: 5173
+          hostPort: 5173
+      
+      # Define the command that will be executed. 
+      # This overrides any existing CMD or ENTRYPOINT in the Dockerfile if needed, 
+      # but here it explicitly confirms the execution path.
+      # command: ["npm", "run", "docker:dev"] 
+      # Note: We rely on the CMD in the Dockerfile, so this is commented out unless override is needed.
