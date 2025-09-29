@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   photography-portfolio-app:
-    # Use the image you built locally with 'docker build -t photography-portfolio-dev .'
+    # Use the image you built locally with 'podman build -t photography-portfolio-dev .'
     image: localhost/photography-portfolio-dev:latest
     
     # Map the container port 5173 to the host machine port 5173
