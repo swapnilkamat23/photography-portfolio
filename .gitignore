@@ -16,6 +16,7 @@ dist-ssr
 /src/photoData.json
 /processing_cache.json
 /src/assets/resized
+/src/assets/images
 
 # Editor directories and files
 .vscode/*
